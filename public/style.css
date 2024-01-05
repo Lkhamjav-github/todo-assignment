@@ -1,0 +1,445 @@
+/* Main html styles */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+p {
+    display: flex;
+    gap: 5px;
+}
+
+#holder {
+    background-image: url("https://c1.wallpaperflare.com/path/565/385/156/sunset-brook-green-meadow-june-df867360f0bed19da26bbb3838498c8f.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    width: 1200px;
+    height: 100vh;
+    display: flex;
+    margin-top: 50px;
+}
+
+#grayarea {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 250px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: gainsboro;
+    margin: 30px;
+    padding: 8px;
+}
+
+.heading {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.TaskNumbers {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.AddTaskContainer {
+    margin: 10px;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.AddTaskContainer:hover {
+    background-color: rgb(174, 170, 170);
+}
+
+.AddTaskContainer:hover {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+span {
+    color: gray;
+}
+
+.tasks_holder {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-height: 30px;
+}
+
+/* Add Task Section styles */
+#modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    top: 150px;
+    border-radius: 5px;
+    border: solid 1px white;
+    background-color: white;
+    padding: 16px;
+    visibility: hidden;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    height: 2rem;
+    border-radius: 5px;
+    border: solid 1px gray;
+}
+
+textarea {
+    border-radius: 5px;
+    border: solid 1px gray;
+}
+
+select {
+    height: 2rem;
+    border-radius: 5px;
+    border: solid 1px gray;
+}
+
+#Description {
+    height: 6rem;
+}
+
+button {
+    background-color: black;
+    border-radius: 5px;
+    border: solid 1px black;
+    color: white;
+    height: 1.8rem;
+    margin-top: 20px;
+}
+
+.red_p {
+    color: red;
+    visibility: hidden;
+}
+
+.task_container {
+    height: 100px;
+    display: flex;
+    padding: 8px;
+    background-color: white;
+    border: solid 1px white;
+    border-radius: 5px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.task_justify {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.done_icon {
+    border: solid 1px gray;
+    border-radius: 50%;
+    background: url(./check-solid.svg) center no-repeat;
+    width: 24px;
+    height: 24px;
+    background-size: 50%;
+    cursor: pointer;
+}
+
+.task_info_holder {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 10px;
+}
+
+.task_title {
+    font-size: 16px;
+}
+
+.task_desc {
+    font-size: 16px;
+}
+
+.task_priority {
+    border: solid 1px gray;
+    border-radius: 5px;
+    font-size: 12px;
+    width: fit-content;
+    padding: 5px;
+}
+
+.task_edit_close_holder {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 24px;
+}
+
+.task_edit {
+    border: solid 1px gray;
+    border-radius: 50%;
+    background: url(./pen-to-square-solid.svg) center no-repeat;
+    width: 24px;
+    height: 24px;
+    background-size: 50%;
+    cursor: pointer;
+}
+
+.task_close {
+    border: solid 1px gray;
+    border-radius: 50%;
+    background: url(./xmark-solid.svg) center no-repeat;
+    width: 24px;
+    height: 24px;
+    background-size: 50%;
+    cursor: pointer;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 1000px) {
+    main {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        row-gap: 0;
+        margin-top: 20px;
+    }
+
+    .container {
+        width: 300px;
+        max-height: 450px;
+    }
+
+    .tasks_holder {
+        max-height: 250px;
+        overflow-y: scroll;
+    }
+
+    #grayarea {
+        overflow-y: scroll;
+    }
+
+    #holder {
+        background-image: url(https://picsum.photos/850/1400);
+        overflow-y: scroll;
+    }
+
+    #AddTaskSection {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+        max-height: 230px;
+        margin: 15px;
+    }
+
+    #holder {
+        background-image: url("https://c1.wallpaperflare.com/path/565/385/156/sunset-brook-green-meadow-june-df867360f0bed19da26bbb3838498c8f.jpg");
+    }
+
+    #AddTaskSection {
+        width: 70%;
+    }
+}
+
+/* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-image: url("https://c1.wallpaperflare.com/path/565/385/156/sunset-brook-green-meadow-june-df867360f0bed19da26bbb3838498c8f.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.container {
+    width: 1320px;
+    padding: 0px 16px;
+    margin: auto;
+    height: 100vh;
+
+}
+
+.boards {
+    display: flex;
+    gap: 16px;
+    padding-top: 120px;
+}
+
+.card {
+    padding: 8px;
+    border-radius: 4px;
+    background-color: white;
+    cursor: grab;
+    display: flex;
+    gap: 12px;
+}
+
+#fa-circle-check {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.board-header {
+    padding: 8px;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#addBtn {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.miidle-remove {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.board {
+    background-color: #ebecf0;
+    border-radius: 8px;
+    padding: 8px;
+    width: 250px;
+    height: fit-content;
+}
+
+#addBtn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+.card {
+    padding: 8px;
+    border-radius: 4px;
+    background-color: white;
+    cursor: grab;
+    display: flex;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.modal {
+    position: absolute;
+    display: none;
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+    width: 400px;
+    /* display: flex; */
+/* flex-direction: column;
+gap: 16px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+form>div {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    resize: none;
+}
+
+.task {
+    padding: 8px;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    gap: 12px;
+}
+
+i {
+    font-size: 1.25em;
+}
+
+.details {
+    flex: 1;
+    flex-basis: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+}
+
+button {
+    width: fit-content;
+    padding: 4px 8px;
+}
+
+.correct {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.count {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+} */

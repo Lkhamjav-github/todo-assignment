@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do Web</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/7b72469c70.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="holder">
+        <div id="grayarea">
+            <main id="main" class="main_container">
+                <section class="ToDo container" id="ToDo_container">
+                    <div id="todo_heading" class="heading">
+                        <h1 id="todo_h1">To Do</h1>
+                        <span id="todo_tasknumbers" class="TaskNumbers">0</span>
+                    </div>
+                    <div id="Todo_tasks" class="tasks_holder"></div>
+                    <div id="todo_addtaskcontainer" class="AddTaskContainer">
+                        <p id="todo_p"><i class="fa-solid fa-plus"></i>Add task</p>
+                    </div>
+                </section>
+                <section class="InProgress container" id="InProgress_container">
+                    <div id="inprogress_heading" class="heading">
+                        <h1 id="inprogress_h1">In Progress</h1>
+                        <span id="inprogress_tasknumbers" class="TaskNumbers">0</span>
+                    </div>
+                    <div id="Inprogress_tasks" class="tasks_holder"></div>
+                    <div id="inprogress_addtaskcontainer" class="AddTaskContainer">
+                        <p id="inprogress_p"><i class="fa-solid fa-plus"></i>Add task</p>
+                    </div>
+                </section>
+                <section class="Stuck container" id="Stuck_container">
+                    <div id="stuck_heading" class="heading">
+                        <h1 id="stuck_h1">Stuck</h1>
+                        <span id="stuck_tasknumbers" class="TaskNumbers">0</span>
+                    </div>
+                    <div id="Stuck_tasks" class="tasks_holder"></div>
+                    <div id="stuck_addtaskcontainer" class="AddTaskContainer">
+                        <p id="stuck_p"><i class="fa-solid fa-plus"></i>Add task</p>
+                    </div>
+                </section>
+                <section class="Done container" id="Done_container">
+                    <div id="done_heading" class="heading">
+                        <h1 id="done_h1">Done</h1>
+                        <span id="done_tasknumbers" class="TaskNumbers">0</span>
+                    </div>
+                    <div id="Done_tasks" class="tasks_holder"></div>
+                    <div id="done_addtaskcontainer" class="AddTaskContainer">
+                        <p id="done_p"><i class="fa-solid fa-plus"></i>Add task</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <section id="modal">
+            <h1>Add Task</h1>
+            <label for="Title">Title</label>
+            <input type="text" id="Title" name="Title" required />
+            <p id="helpertext_title" class="red_p">Бөглөнө үү</p>
+            <label for="Description">Description</label>
+            <textarea name="Description" id="Description" cols="4" rows="30"></textarea>
+            <p id="helpertext_description" class="red_p">Бөглөнө үү</p>
+
+            <label for="Status">Status</label>
+            <select name="Status" id="Status">
+                <option value="todo">To Do</option>
+                <option value="inprogress">In progress</option>
+                <option value="stuck">Stuck</option>
+                <option value="done">Done</option>
+            </select>
+
+
+            <p id="helpertext_status" class="red_p">Бөглөнө үү</p>
+            <label for="Priority">Priority</label>
+            <select name="Priority" id="Priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <p id="helpertext_priority" class="red_p">Бөглөнө үү</p>
+            <button id="AddTaskButton">Add task</button>
+        </section>
+    </div>
+    </div>
+    </div>
+    <!-- <script src="./ToDoWeb.js"></script> -->
+    <script src="index.js"></script>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://kit.fontawesome.com/4c3b4bf90b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="modal" class="modal">
+        <form class="addTask">
+            <h1>Add Task</h1>
+            <div>
+                <label for="title">Title</label>
+                <input id="title" name="title" type="text">
+            </div>
+            <div>
+                <label for="description">Description</label>
+                <textarea id="description" name="description" type="text"></textarea>
+            </div>
+            <div>
+                <label for="status">Status</label>
+                <select name="status" id="status">
+                    <option value="todo">To do</option>
+                    <option value="inprogress">In progress</option>
+                    <option value="stuck">Stuck</option>
+                    <option value="done">Done</option>
+                </select>
+            </div>
+            <div>
+                <label for="priority">Priority</label>
+                <select name="priority" id="priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <button id="addTask" type="button">Add task</button>
+
+        </form>
+    </div>
+    <div class="container">
+        <div class="boards">
+            <div id="board" class="board">
+                <div class="board-header">
+                    To do
+                    <span class="count" id="todo-count"></span>
+                </div>
+                <div class="miidle-remove" id="middle-todo">
+
+                </div>
+                <div class="adding-btn" id="addBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    <div>Add card</div>
+                </div>
+            </div>
+            <div id="board-in-progress" class="board">
+                <div class="board-header">
+                    In progress
+                    <span class="count" id="in-count">0</span>
+                </div>
+                <div class="miidle-remove" id="middle-inprogress"></div>
+                <div class="adding-btn" id="addBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    <div>Add card</div>
+                </div>
+            </div>
+            <div id="board-stuck" class="board">
+                <div class="board-header">
+                    Stuck
+                    <span class="count" id="stuck-count">0</span>
+                </div>
+                <div class="miidle-remove" id="middle-stuck"></div>
+                <div class="adding-btn" id="addBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    <div>Add card</div>
+                </div>
+            </div>
+            <div id="board-done" class="board">
+                <div class="board-header">
+                    Done
+                    <span class="count" id="done-count">0</span>
+                </div>
+                <div class="miidle-remove" id="middle-done"></div>
+                <div class="adding-btn" id="addBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    <div>Add card</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="index.js"></script> -->
+<!-- <script src="card.js"></script> -->
+<script src="https://kit.fontawesome.com/4c3b4bf90b.js" crossorigin="anonymous"></script>
+<script src="./script.js"></script>
+
+</body>
+
+</html> -->
